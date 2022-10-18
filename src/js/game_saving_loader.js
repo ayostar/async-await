@@ -4,8 +4,8 @@ import GameSaving from './game_saving';
 
 export default class GameSavingLoader {
   static async load() {
-    const savingData = await json(await read());
-    const result = JSON.parse(savingData);
-    return new GameSaving(result);
+    const result = await json(await read());
+    const parsedData = JSON.parse(result);
+    return new GameSaving(parsedData);
   }
 }
